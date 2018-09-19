@@ -1,28 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="wrapper">
+      <!-- TopMenu section -->
+      <TopMenu msg="Welcome to Your Vue.js App"/>
+      <!-- /TopMenu section -->
+      <!-- sidebar and main content wrapper -->
+      <div class="container-1">
+        <left-sidebar></left-sidebar>
+        <main-section></main-section>
+
+      </div>
+      <!-- /sidebar and main content wrapper -->
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import lessStyle from './less/style.less'
+import TopMenu from './components/TopMenu.vue'
+import LeftSidebar from './components/LeftSidebar.vue'
+import MainSection from './components/MainSection.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    TopMenu,
+    LeftSidebar,
+    MainSection
   }
 }
-</script lang="less" scoped>
+</script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+<style lang="less">
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/assets/fonts/Helvetica/HELR45W.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+  background: #F5F5F5;
+  font-family: 'Helvetica', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 0;
+  margin: 0;
+}
+.container-1{
+  display: flex;
+
 }
 </style>
